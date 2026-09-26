@@ -1,0 +1,120 @@
+{
+  "data": "/root/jjm/math/data/eval400_locked/eval400.jsonl",
+  "records": 400,
+  "base_model": "Qwen/Qwen3.5-9B-Base",
+  "adapters": {
+    "stage2": {
+      "path": "/root/jjm/math/outputs/sft_stage2_code_e2/epoch-2",
+      "summary": {
+        "records": 400,
+        "tags_exact_rate": 0.995,
+        "code_blocks_complete_rate": 0.995,
+        "signature_exact_rate": 0.995,
+        "python_executable_rate": 0.86,
+        "all_hidden_tests_pass_rate": 0.6175,
+        "backward_target_accuracy": 0.415,
+        "final_answer_accuracy": 0.4325,
+        "full_success_rate": 0.3225,
+        "unit_tests": {
+          "passed": 1058,
+          "total": 1470,
+          "pass_rate": 0.719728
+        },
+        "property_tests": {
+          "passed": 254,
+          "total": 403,
+          "pass_rate": 0.630273
+        },
+        "mean_generation_seconds": 9.645657,
+        "mean_prompt_tokens": 1076.765,
+        "mean_completion_tokens": 149.6925,
+        "error_rows": 0
+      }
+    },
+    "main_grpo": {
+      "path": "/root/jjm/math/outputs/grpo_medium_omni_v1_2gpu/final",
+      "summary": {
+        "records": 400,
+        "tags_exact_rate": 0.9975,
+        "code_blocks_complete_rate": 0.9975,
+        "signature_exact_rate": 0.9975,
+        "python_executable_rate": 0.9025,
+        "all_hidden_tests_pass_rate": 0.6575,
+        "backward_target_accuracy": 0.6375,
+        "final_answer_accuracy": 0.675,
+        "full_success_rate": 0.5225,
+        "unit_tests": {
+          "passed": 1140,
+          "total": 1470,
+          "pass_rate": 0.77551
+        },
+        "property_tests": {
+          "passed": 267,
+          "total": 403,
+          "pass_rate": 0.662531
+        },
+        "mean_generation_seconds": 10.986071,
+        "mean_prompt_tokens": 1076.765,
+        "mean_completion_tokens": 171.1075,
+        "error_rows": 0
+      }
+    },
+    "feedback_grpo": {
+      "path": "/root/jjm/math/outputs/grpo_teacher_hard60/final",
+      "summary": {
+        "records": 400,
+        "tags_exact_rate": 0.9925,
+        "code_blocks_complete_rate": 0.9925,
+        "signature_exact_rate": 0.9925,
+        "python_executable_rate": 0.9075,
+        "all_hidden_tests_pass_rate": 0.67,
+        "backward_target_accuracy": 0.6375,
+        "final_answer_accuracy": 0.69,
+        "full_success_rate": 0.535,
+        "unit_tests": {
+          "passed": 1141,
+          "total": 1470,
+          "pass_rate": 0.77619
+        },
+        "property_tests": {
+          "passed": 272,
+          "total": 403,
+          "pass_rate": 0.674938
+        },
+        "mean_generation_seconds": 11.761233,
+        "mean_prompt_tokens": 1076.765,
+        "mean_completion_tokens": 183.78,
+        "error_rows": 0
+      }
+    },
+    "teacher_judge": {
+      "path": "/root/jjm/math/outputs/grpo_teacher_judge_hard60_v2/final",
+      "summary": {
+        "records": 400,
+        "tags_exact_rate": 0.9925,
+        "code_blocks_complete_rate": 0.9925,
+        "signature_exact_rate": 0.9925,
+        "python_executable_rate": 0.91,
+        "all_hidden_tests_pass_rate": 0.665,
+        "backward_target_accuracy": 0.6325,
+        "final_answer_accuracy": 0.6825,
+        "full_success_rate": 0.5275,
+        "unit_tests": {
+          "passed": 1147,
+          "total": 1470,
+          "pass_rate": 0.780272
+        },
+        "property_tests": {
+          "passed": 270,
+          "total": 403,
+          "pass_rate": 0.669975
+        },
+        "mean_generation_seconds": 11.497599,
+        "mean_prompt_tokens": 1076.765,
+        "mean_completion_tokens": 179.3025,
+        "error_rows": 0
+      }
+    }
+  },
+  "privacy": "Rollouts receive only metadata.function_graph. Hidden tests and target_call from metadata.verification_graph are used only after generation."
+}

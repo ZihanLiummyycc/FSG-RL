@@ -1,0 +1,56 @@
+{
+  "adapters": {
+    "feedback_grpo": {
+      "adapter_config_sha256": "c1e1ddbfcdfab7071666d9b1afec0299699a8b806b09f49ed16e3c70576a1a0e",
+      "adapter_model_sha256": "9fa9837394d53a19a1a6376f900e08cce667e4f80fb10bdfa97798b8e81638e0",
+      "path": "/root/jjm/math/outputs/grpo_teacher_hard60/final"
+    },
+    "main_grpo": {
+      "adapter_config_sha256": "99371588b891f65de53567de0e542e698e6713c2eb7dbc95494ac5083484141e",
+      "adapter_model_sha256": "e588125d0ca94e5ace998e2c35259c0d0f2e63154e4c8c0131a48b5934590add",
+      "path": "/root/jjm/math/outputs/grpo_medium_omni_v1_2gpu/final"
+    },
+    "stage2": {
+      "adapter_config_sha256": "79f823b22eb1fb558a9ea1086c53c519ff11bc22aa479b5e5e486db1d17300f5",
+      "adapter_model_sha256": "73f43bc3c8debaf443c6364cbc2f266af9687414697e1852d72ee31718955292",
+      "path": "/root/jjm/math/outputs/sft_stage2_code_e2/epoch-2"
+    },
+    "teacher_judge": {
+      "adapter_config_sha256": "3c27cc3974652b809cc4f42226618d4a124b09acf11197a907315b41ff19552c",
+      "adapter_model_sha256": "b053d3e7f2bec4b828ad4bb413ccc3ac3c240313ee61b25ed4c9d9dcc0db1343",
+      "path": "/root/jjm/math/outputs/grpo_teacher_judge_hard60_v2/final"
+    }
+  },
+  "base_model": "Qwen/Qwen3.5-9B-Base",
+  "code": {
+    "comparison_sha256": "04b89d073cf6fd4cad257cc98327efde0527b32783384c7d8a138b5d7b9333d0",
+    "evaluator_sha256": "bb11a1c22ebbef42b883c634a20ae53e5bee3947852be1708c14c21fe5f07455",
+    "rollout_sha256": "9da3e2367c35c4ab5eb526104769cae27c15e08b76a5453746eeba6eceec9939",
+    "root": "/root/jjm/math/protocols/eval400_unified_v1/code",
+    "tree_sha256": "816215d0024e308f88b3ede42c459f0ddbb18cb10ccb3aaccb8ba9f495cd48bf"
+  },
+  "data": {
+    "lock_manifest_path": "/root/jjm/math/data/eval400_locked/lock_manifest.json",
+    "lock_manifest_sha256": "c34fdbaefba4469c3c233af9679861a17f03d7635553e4676cee9c0a2058f39b",
+    "path": "/root/jjm/math/data/eval400_locked/eval400.jsonl",
+    "rows": 400,
+    "sha256": "6bdfa3a01d45b4308df2b2564a0a07f82c0e0c4f4b398eeae0597d172469ae90"
+  },
+  "decoding": {
+    "do_sample": false,
+    "enable_thinking": false,
+    "max_new_tokens": 2048,
+    "mode": "greedy",
+    "seed": 42,
+    "temperature": 0.0
+  },
+  "execution": {
+    "backend": "local_limited",
+    "local_memory_max": "8g",
+    "memory_fraction": 0.4,
+    "timeout_seconds": 5
+  },
+  "frozen": true,
+  "protocol_name": "eval400_unified_v1",
+  "teacher_free": true
+}

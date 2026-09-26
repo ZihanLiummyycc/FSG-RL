@@ -1,0 +1,9 @@
+# Dataset release and provenance
+
+The held-out FSG-RL evaluation set contains 400 unique math problems: 97 from GSM8K, 95 from MathQA, 128 from MATH, and 80 from Omni-MATH. Each published row contains the question and its **public** function graph. The graph specifies subquestions, dependencies, output types, and executable interfaces. It is the same graph-conditioned input supplied to evaluated policies.
+
+The original locked file also contains gold answers, target calls, hidden tests, and annotation audits. Those fields are **not** in the public input file. They were used for scoring only after generation. Consequently, the public file supports prompt construction and qualitative analysis but **does not by itself reproduce the paper's private-test or answer-accuracy scores**. The original scoring-file SHA256 is recorded in `reproducibility/lock_manifest.original.json`; the public export has its own SHA256 and is not byte-identical to that locked scoring file.
+
+The evaluation split was selected from reserved source pools after excluding matching IDs and normalized problem text from the supplied training and earlier development records. This is a split-level overlap check, not a claim that upstream foundation-model pretraining could not contain these public-source questions. The 400 items remain evaluation-only and must not be used for training or checkpoint selection in a new claimed held-out comparison.
+
+Original source licenses and attribution: [GSM8K (MIT)](https://huggingface.co/datasets/openai/gsm8k), [MathQA (Apache-2.0)](https://huggingface.co/datasets/allenai/math_qa), [MATH (MIT)](https://huggingface.co/datasets/EleutherAI/hendrycks_math), [Omni-MATH (Apache-2.0)](https://huggingface.co/datasets/KbsdJames/Omni-MATH). This combined release does not replace the conditions of its upstream sources.

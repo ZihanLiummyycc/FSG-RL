@@ -1,0 +1,114 @@
+{
+  "dataset": {
+    "algorithm_problem_dataset_path": "/root/jjm/math/data/grpo/teacher_hard60/hard60.jsonl",
+    "split": "train",
+    "shuffle": true,
+    "seed": 2609,
+    "limit": 60
+  },
+  "memory": {
+    "storage_path": "/root/jjm/math/outputs/grpo_teacher_hard60/memory.json",
+    "embedding_model": null,
+    "top_k": 0,
+    "keyword_weight": 0.0,
+    "embedding_weight": 0.0,
+    "success_node_threshold": 0.8,
+    "success_edge_threshold": 0.8,
+    "reranker": {"enabled": false}
+  },
+  "decomposition": {"backend": "dataset", "max_nodes": 8},
+  "policy": {
+    "backend": "transformers",
+    "model_name_or_path": "Qwen/Qwen3.5-9B-Base",
+    "adapter_name_or_path": "/root/jjm/math/outputs/grpo_medium_omni_v1_2gpu/final",
+    "reference_adapter_name_or_path": "/root/jjm/math/outputs/grpo_medium_omni_v1_2gpu/final",
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "quantization": "4bit",
+    "trust_remote_code": false
+  },
+  "teacher": {
+    "enabled": true,
+    "feedback_visibility": "aggregate",
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "api": {
+      "model": "gpt-5.6-terra",
+      "base_url": "https://api.inferera.com/v1",
+      "api_key_env": "TEACHER_API_KEY",
+      "timeout_seconds": 180,
+      "max_retries": 2
+    }
+  },
+  "rollout": {
+    "num_rollouts": 4,
+    "max_new_tokens": 1536,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "do_sample": true,
+    "repetition_penalty": 1.0,
+    "seed": 2609
+  },
+  "sandbox": {
+    "backend": "local_limited",
+    "timeout_seconds": 5,
+    "memory_fraction": 0.4,
+    "local_memory_max": "8g",
+    "pids_limit": 32,
+    "allow_unsafe_subprocess": true
+  },
+  "verifier": {
+    "node_execution_weight": 0.25,
+    "node_test_weight": 0.5,
+    "node_property_weight": 0.25
+  },
+  "repair": {
+    "enabled": true,
+    "repair_budget": 1,
+    "max_teacher_calls_per_problem": 1,
+    "group_mode": "shared_feedback",
+    "record_before_after": true,
+    "fail_open": true
+  },
+  "reward": {
+    "lambda_format": 0.1,
+    "lambda_signature": 0.15,
+    "lambda_execution": 0.5,
+    "lambda_unit_test": 0.75,
+    "lambda_property_test": 0.5,
+    "lambda_final": 1.5,
+    "lambda_node": 0.0,
+    "lambda_edge": 0.05,
+    "lambda_backward": 0.75,
+    "lambda_consensus": 0.0,
+    "lambda_efficiency": 0.0,
+    "lambda_repair": 0.0,
+    "answer_gate_floor": 0.25,
+    "span_answer_credit": 0.5,
+    "runtime_budget_seconds": 5.0,
+    "tool_call_budget": 8,
+    "token_budget": 2048
+  },
+  "grpo": {
+    "epsilon": 0.15,
+    "beta_kl": 0.05,
+    "optimization_epochs": 1,
+    "logprob_chunk_size": 64
+  },
+  "training": {
+    "use_lora": true,
+    "lora_dropout": 0.0,
+    "gradient_checkpointing": true,
+    "learning_rate": 0.0000005,
+    "weight_decay": 0.0,
+    "max_grad_norm": 0.3,
+    "save_every_updates": 15,
+    "output_dir": "/root/jjm/math/outputs/grpo_teacher_hard60"
+  },
+  "output": {
+    "summary_path": "/root/jjm/math/outputs/grpo_teacher_hard60/run_summary.json",
+    "trajectory_path": "/root/jjm/math/outputs/grpo_teacher_hard60/trajectories.jsonl",
+    "include_problem_records_in_summary": false,
+    "mistake_notebook_path": "/root/jjm/math/outputs/grpo_teacher_hard60/mistakes.jsonl"
+  }
+}

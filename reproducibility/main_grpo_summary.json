@@ -1,0 +1,25 @@
+{
+  "records": 400,
+  "tags_exact_rate": 0.9975,
+  "code_blocks_complete_rate": 0.9975,
+  "signature_exact_rate": 0.9975,
+  "python_executable_rate": 0.9025,
+  "all_hidden_tests_pass_rate": 0.6575,
+  "backward_target_accuracy": 0.6375,
+  "final_answer_accuracy": 0.675,
+  "full_success_rate": 0.5225,
+  "unit_tests": {
+    "passed": 1140,
+    "total": 1470,
+    "pass_rate": 0.77551
+  },
+  "property_tests": {
+    "passed": 267,
+    "total": 403,
+    "pass_rate": 0.662531
+  },
+  "mean_generation_seconds": 10.986071,
+  "mean_prompt_tokens": 1076.765,
+  "mean_completion_tokens": 171.1075,
+  "error_rows": 0
+}

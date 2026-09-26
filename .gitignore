@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+*.log
+outputs/
+checkpoints/
+adapter_model.safetensors
+optimizer.pt
+*.zip
+*.tar.gz

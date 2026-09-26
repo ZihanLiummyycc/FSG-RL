@@ -1,0 +1,38 @@
+{
+  "sft_data": {
+    "train_files": [
+      "/root/jjm/math/data/code_sft/code_sft_mixed_train.jsonl"
+    ],
+    "validation_files": [
+      "/root/jjm/math/data/code_sft/code_sft_validation_17.jsonl"
+    ]
+  },
+  "policy": {
+    "backend": "transformers",
+    "model_name_or_path": "Qwen/Qwen3.5-9B-Base",
+    "adapter_name_or_path": "/root/jjm/math/outputs/sft_qwen35_9b_terra_bs4_e3/epoch-2",
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "quantization": "4bit",
+    "trust_remote_code": false
+  },
+  "rollout": {
+    "seed": 42
+  },
+  "training": {
+    "use_lora": true,
+    "gradient_checkpointing": true,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.0,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "epochs": 2,
+    "max_seq_length": 4096,
+    "warmup_ratio": 0.03,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "log_every_updates": 5,
+    "save_each_epoch": true,
+    "output_dir": "/root/jjm/math/outputs/sft_stage2_code_e2"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "sft_data": {
+    "train_files": [
+      "/root/jjm/math/data/omni_sft_terra/omni_sft_graph_train.jsonl",
+      "/root/jjm/math/data/omni_sft_terra/omni_sft_solve_train.jsonl"
+    ],
+    "validation_files": [
+      "/root/jjm/math/data/omni_sft_terra/omni_sft_graph_validation.jsonl",
+      "/root/jjm/math/data/omni_sft_terra/omni_sft_solve_validation.jsonl"
+    ]
+  },
+  "policy": {
+    "backend": "transformers",
+    "model_name_or_path": "Qwen/Qwen3.5-9B-Base",
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "quantization": "4bit",
+    "trust_remote_code": false
+  },
+  "rollout": {
+    "seed": 42
+  },
+  "training": {
+    "use_lora": true,
+    "lora_rank": 32,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "lora_target_modules": "all-linear",
+    "gradient_checkpointing": true,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "epochs": 3,
+    "max_seq_length": 3072,
+    "warmup_ratio": 0.03,
+    "max_grad_norm": 1.0,
+    "seed": 42,
+    "log_every_updates": 5,
+    "save_each_epoch": true,
+    "output_dir": "/root/jjm/math/outputs/sft_qwen35_9b_terra_bs4_e3"
+  }
+}
