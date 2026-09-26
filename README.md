@@ -8,7 +8,7 @@ FSG-RL represents a math problem as a directed graph of subquestions. Executable
 
 The reported experiments use **offline, dataset-annotated function graphs** (`decomposition.backend=dataset`). The policy sees the problem and public graph; gold answers, target calls, and private tests are not included in its generation prompt. Main GRPO starts from executable SFT. Two separate 60-problem continuations use feedback-conditioned teacher guidance and reward-only teacher judging. Evaluation is teacher-free and does not retrieve memory. Online policy decomposition, memory retrieval, and other repository features are optional framework components, not results claimed for the reported Eval400 comparison.
 
-The evaluation set is a custom graph-conditioned executable benchmark, **not** an official GSM8K, MathQA, MATH, or Omni-MATH test score. Its 400 problems comprise 97 GSM8K, 95 MathQA, 128 MATH, and 80 Omni-MATH items. See [`DATA.md`](DATA.md) for provenance and the public/private boundary.
+The released benchmark includes the paper's SFT and GRPO training records and a custom graph-conditioned evaluation split. It is **not** an official GSM8K, MathQA, MATH, or Omni-MATH test score. Its 400 evaluation problems comprise 97 GSM8K, 95 MathQA, 128 MATH, and 80 Omni-MATH items. See [`DATA.md`](DATA.md) for provenance and the public/private boundary.
 
 ## Repository map
 
