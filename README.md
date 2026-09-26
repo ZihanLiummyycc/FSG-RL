@@ -38,4 +38,14 @@ The original frozen evaluation required the full private scoring records, which 
 
 The original protocol manifest records hashes for the 400-item scoring file, four adapters, evaluator, rollout implementation, and decoding settings. The historical main-GRPO config sets `beta_kl=0.03`; the two teacher continuations set `beta_kl=0.05`. The paper's latest draft should be checked against these recorded values before publication. The official reported stage comparison is in `reproducibility/statistical_report.md`.
 
-The public benchmark and four adapter repositories will be linked here after their Hugging Face uploads complete.
+## Released artifacts
+
+| Artifact | Hugging Face repository |
+| --- | --- |
+| Training data and public evaluation inputs | [FSG-RL-Benchmark](https://huggingface.co/datasets/ZihanLiummyycc/FSG-RL-Benchmark) |
+| Executable-solving SFT adapter | [FSG-RL-Stage2-SFT](https://huggingface.co/ZihanLiummyycc/FSG-RL-Stage2-SFT) |
+| Main GRPO adapter | [FSG-RL-Main-GRPO](https://huggingface.co/ZihanLiummyycc/FSG-RL-Main-GRPO) |
+| Feedback-conditioned GRPO adapter | [FSG-RL-Feedback-GRPO](https://huggingface.co/ZihanLiummyycc/FSG-RL-Feedback-GRPO) |
+| Teacher-judge GRPO adapter | [FSG-RL-Teacher-Judge-GRPO](https://huggingface.co/ZihanLiummyycc/FSG-RL-Teacher-Judge-GRPO) |
+
+The adapter repositories contain LoRA weights, not the Qwen base model. The public evaluation split omits gold answers and private verifier tests.
